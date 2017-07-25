@@ -23,39 +23,21 @@
 
 
 class Employee
+  attr_reader :first_name, :last_name, :salary, :active
+  # def first_name
+  #   @first_name
+  # end
+  # employee1.first_name
+  attr_writer :first_name, :last_name, :active
+  # def first_name=(fn)
+  #   @first_name = fn
+  # end
+  # employee1.first_name = "something"
   def initialize(input_first_name, input_last_name, input_salary, input_active)
     @first_name = input_first_name
     @last_name = input_last_name
     @salary = input_salary
     @active = input_active
-  end
-
-  def first_name
-    @first_name
-  end
-
-  def last_name
-    @last_name
-  end
-
-  def salary
-    @salary
-  end
-
-  def active
-    @active
-  end
-
-  def first_name=(input_fn)
-    @first_name = input_fn
-  end
-
-  def last_name=(input_ln)
-    @last_name = input_ln
-  end
-
-  def active=(input_ac)
-    @active = input_ac
   end
 
   def print_info
@@ -74,7 +56,7 @@ employee1 = Employee.new("Majora", "Carter", 80000, true)
 
 employee2 = Employee.new("Danilo", "Campos", 100000, false)
 
-p employee2.last_name
-employee2.last_name = "Jones"
-p employee2.last_name
+p employee2.first_name
+employee2.first_name = "Jones"
+p employee2.first_name
 
