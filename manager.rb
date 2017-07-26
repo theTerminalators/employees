@@ -30,6 +30,10 @@ class Employee
   def give_annual_raise
     @salary = @salary * 1.05
   end
+
+  def fire
+    @active = false
+  end
 end
 
 
@@ -60,6 +64,23 @@ class Manager < Employee
     # some code that actually sends the report
     puts 'totally just sent that report'
   end
+
+  def give_all_raises
+    # get all of my employees
+    @employees.each do |employee|
+      # give `each` of them a raise
+      employee.give_annual_raise
+    end
+  end
+
+  def fire_all_employees
+    # get all of my employees
+    @employees.each do |employee|
+      employee.fire
+    end
+
+
+  end
 end
 
 manager1 = Manager.new({:first_name => "Manny",
@@ -68,5 +89,7 @@ manager1 = Manager.new({:first_name => "Manny",
                          :active => true,
                          :employees => [employee1, employee2]})
 
+# p manager1
+manager1.fire_all_employees
+p manager1.first_name
 
-manager1.print_info # printed out

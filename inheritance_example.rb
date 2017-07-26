@@ -19,6 +19,10 @@ class Vehicle
 end
 
 class Car < Vehicle
+  def steering_wheel_diameter
+
+  end
+
   def honk_horn
     puts "Beeeeeeep!"
   end
