@@ -1,25 +1,8 @@
-# # first name, last_name, salary, active status
+# a manager can do everything that an employee can do, and they can also send reports
+# def send_report
+# puts send the report
+# end
 
-# # array
-# employee1 = ["Marjora", "Carter", 80000, true]
-# employee2 = ["Danilo", "Campos", 100000, false]
-
-# p employee1[0] + " " + employee1[1] + " " + "makes " + employee1[2].to_s + " per year."
-
-# p "#{employee2[0]} #{employee2[1]} makes #{employee2[2]} per year."
-
-
-
-# # hash
-# employee1 = {:first_name => "Majora", :last_name => "Carter", :salary => 80000, :active => true}
-
-# employee2 = {first_name: "Danilo", last_name: "Campos", salary: 100000, active: false}
-
-# # employee2 = {:first_name => "Danilo", :last_name => "Campos", :salary => 100000, :active => false}
-
-# p "#{employee1[:first_name]} #{employee1[:last_name]} makes #{employee1[:salary]} per year"
-
-# p "#{employee2[:first_name]} #{employee2[:last_name]} makes #{employee2[:salary]} per year"
 
 
 class Employee
@@ -56,13 +39,29 @@ employee1 = Employee.new({:first_name => "Majora",
                          :salary => 80000,
                          :active => true})
 
-employee1.print_info
+# employee1.print_info
 
 # "real life" version
 employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 100000, active: false)
 
-employee2.print_info
+# employee2.print_info
 # p employee2.first_name
 # employee2.first_name = "Jones"
 # p employee2.first_name
 
+class Manager < Employee
+  def send_report
+    puts 'sending the report.....'
+    # some code that actually sends the report
+    puts 'totally just sent that report'
+  end
+end
+
+manager1 = Manager.new({:first_name => "Manny",
+                         :last_name => "Manning",
+                         :salary => 800000,
+                         :active => true})
+
+
+manager1.print_info # printed out
+manager1.send_report
